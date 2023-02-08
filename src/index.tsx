@@ -1,8 +1,18 @@
-import { log } from 'console'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
+// JSX Упрощенный вариант записи новых элементов в React
+
 const h1 = React.createElement('h1', { id: 'title' }, 'Hello React')
+const list1 = (
+    <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+    </ul>
+)
+
+//-------------------------------
 
 const list = React.createElement(
     'ul',
@@ -19,4 +29,4 @@ const content = (
 )
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
-root.render(<React.StrictMode>{content}</React.StrictMode>)
+root.render(<React.StrictMode>{list1}</React.StrictMode>)
