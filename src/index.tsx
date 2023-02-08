@@ -4,10 +4,14 @@ import ReactDOM from 'react-dom/client'
 // JSX Упрощенный вариант записи новых элементов в React
 
 const h1 = React.createElement('h1', { id: 'title' }, 'Hello React')
+
+let a = 10
+let b = 'Hello World'
+
 const list1 = (
     <ul>
-        <li>list item 1</li>
-        <li>list item 2</li>
+        <li>list item 1 {a + a}</li>
+        <li>list item 2 {b}</li>
         <li>list item 3</li>
     </ul>
 )
