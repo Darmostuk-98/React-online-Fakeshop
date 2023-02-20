@@ -11,17 +11,22 @@ const Title = (props: ItitleProps) => {
 
     return <h1>Hello {props.text}</h1>
 }
-
 type ContentProps = {
     text1: string
 }
-
 function App() {
     return (
         <>
             <Title text="Hello" />
             <Title text="Goodbye" />
-            <Content text1="werwer" text2="ewet" year={2023} />
+            <Content
+                text1="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, aspernatur.
+"
+                text2="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, aspernatur.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, aspernatur.
+                "
+                year={2023}
+            />
         </>
     )
 }
