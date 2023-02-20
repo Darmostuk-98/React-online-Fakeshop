@@ -1,3 +1,5 @@
+import './content.css'
+
 type Props = {
     text1: string
     text2: string
@@ -6,15 +8,7 @@ type Props = {
 export const Content = (props: Props) => {
     return (
         <>
-            <p
-                style={{
-                    color: 'white',
-                    backgroundColor: 'red',
-                    padding: '10px',
-                }}
-            >
-                {props.text1}
-            </p>
+            <p className="content">{props.text1}</p>
             <p>{props.text2}</p>
             <div> Year = {props.year}</div>
         </>
