@@ -1,15 +1,15 @@
-import header from 'container/Header/header'
-import main from 'container/Main/main'
-import footer from 'container/Footer/footer'
+import Main from 'Container/Main/Main'
+import Footer from 'Container/Footer/Footer'
+import Header from 'Container/Header/Header'
 
 type Props = {}
-const app = (props: Props) => {
+const App = (props: Props) => {
     return (
         <>
-            <header />
-            <main />
-            <footer />
+            <Header />
+            <Main />
+            <Footer />
         </>
     )
 }
-export default app
+export default App
