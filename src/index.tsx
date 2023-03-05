@@ -1,4 +1,4 @@
-import App from 'Container/App/App'
+import App from 'Container/App/app'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 

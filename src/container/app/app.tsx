@@ -8,7 +8,6 @@ type Props = {}
 const App = (props: Props) => {
     return (
         <StyledEngineProvider injectFirst>
-            ws
             <CssBaseline />
             <Header />
             <Main />
