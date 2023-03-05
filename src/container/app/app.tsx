@@ -1,6 +1,6 @@
-import Main from 'Container/Main/main'
-import Footer from 'Container/Footer/Footer'
-import Header from 'Container/Header/header'
+import Main from 'container/Main/main'
+import Footer from 'container/Footer/footer'
+import Header from 'container/Header/header'
 import CssBaseline from '@mui/material/CssBaseline'
 import { StyledEngineProvider } from '@mui/material/styles'
 
