@@ -5,7 +5,8 @@ import {
     CardContent,
     TextField,
 } from '@mui/material'
-import { log } from 'console'
+import { color } from '@mui/system'
+
 import { Component } from 'react'
 import './ProductsListItem.scss'
 
@@ -20,11 +21,13 @@ type Props = {
 
 type State = {
     count: number
+    color: string
 }
 
 class ProductsListItem extends Component<Props, State> {
     state = {
         count: 1,
+        color: 'green',
     }
     onIncrementClick = () => {
         this.setState((prevState: State) => ({
@@ -36,7 +39,11 @@ class ProductsListItem extends Component<Props, State> {
             count: prevState.count - 1,
         }))
     }
-
+    changeColor = () => {
+        this.setState((prevState: State) => ({
+            color: prevState.color === 'green' ? 'red' : 'green',
+        }))
+    }
     render() {
         const { title, desc, type, capacity, price, image } = this.props
         return (
@@ -53,6 +60,8 @@ class ProductsListItem extends Component<Props, State> {
                     <div className="product-features">
                         Capacity: {this.props.capacity}
                     </div>
+                    <p>Color : {this.state.color}</p>
+                    <button onClick={this.changeColor}>Change Color</button>
                     <div className="product-price">{this.props.price}$</div>
                     <div className="product-quantity">
                         <Button
