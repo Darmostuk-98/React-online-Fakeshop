@@ -7,7 +7,11 @@ type Props = {}
 const ProductsList = (props: Props) => {
     return (
         <>
-            <Typography variant="h3" align="center">
+            <Typography
+                variant="h3"
+                align="center"
+                sx={{ marginBottom: '50px' }}
+            >
                 Products List
             </Typography>
 
