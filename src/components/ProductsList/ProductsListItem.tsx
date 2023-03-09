@@ -26,6 +26,14 @@ const ProductsListItem = ({
     image,
 }: Props) => {
     const [count, setCount] = useState<number>(1)
+
+    const onIncrement = () => {
+        setCount(count + 1)
+    }
+    const onDecrement = () => {
+        setCount(count - 1)
+    }
+
     return (
         <Card variant="outlined" className="product">
             <CardContent>
@@ -38,17 +46,11 @@ const ProductsListItem = ({
                 <div className="product-features">Capacity: {capacity}</div>
                 <div className="product-price">{price}$</div>
                 <div className="product-quantity">
-                    <Button
-                        variant="outlined"
-                        onClick={() => setCount(count - 1)}
-                    >
+                    <Button variant="outlined" onClick={() => onDecrement()}>
                         -
                     </Button>
                     <TextField size="small" value={count} />
-                    <Button
-                        variant="outlined"
-                        onClick={() => setCount(count + 1)}
-                    >
+                    <Button variant="outlined" onClick={() => onIncrement()}>
                         +
                     </Button>
                 </div>
