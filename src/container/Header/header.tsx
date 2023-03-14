@@ -7,9 +7,15 @@ import './Header.scss'
 import Logo from 'components/Logo/Logo'
 import Menu from 'components/Menu/Menu'
 import CartHeader from 'components/CartHeader/CartHeader'
+import { log } from 'console'
 
-type Props = {}
-const header = (props: Props) => {
+type Props = {
+    cartData: {
+        totalCount: number
+        totalPrice: number
+    }
+}
+const header = ({ cartData }: Props) => {
     return (
         <AppBar position="static" className="app-bar">
             <Container>
@@ -25,7 +31,7 @@ const header = (props: Props) => {
                     </IconButton>
                     <Logo />
                     <Menu />
-                    <CartHeader />
+                    <CartHeader cartData={cartData} />
                 </Toolbar>
             </Container>
         </AppBar>
