@@ -5,7 +5,6 @@ import {
     CardContent,
     TextField,
 } from '@mui/material'
-import { color } from '@mui/system'
 
 import { Component } from 'react'
 import './ProductsListItem.scss'
