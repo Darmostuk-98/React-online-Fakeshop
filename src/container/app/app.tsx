@@ -29,9 +29,9 @@ const App = (props: Props) => {
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header cartData={cartData} />
-            <button onClick={() => addProductToCart(1, 100)}>
+            {/* <button onClick={() => addProductToCart(1, 100)}>
                 Добавить в корзину
-            </button>
+            </button> */}
             <Main />
             <Footer />
         </StyledEngineProvider>
