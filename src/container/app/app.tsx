@@ -1,9 +1,9 @@
-import Main from 'container/Main/main'
 import Footer from 'container/Footer/footer'
 import Header from 'container/Header/header'
 import CssBaseline from '@mui/material/CssBaseline'
 import { StyledEngineProvider } from '@mui/material/styles'
 import { useState } from 'react'
+import Main from 'container/Main/main'
 
 type Props = {}
 
@@ -29,10 +29,7 @@ const App = (props: Props) => {
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header cartData={cartData} />
-            {/* <button onClick={() => addProductToCart(1, 100)}>
-                Добавить в корзину
-            </button> */}
-            <Main />
+            <Main addProductToCart={addProductToCart} />
             <Footer />
         </StyledEngineProvider>
     )
