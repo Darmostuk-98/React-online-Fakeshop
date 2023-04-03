@@ -1,38 +1,51 @@
-import Main from 'container/Main/main'
 import Footer from 'container/Footer/footer'
 import Header from 'container/Header/header'
 import CssBaseline from '@mui/material/CssBaseline'
 import { StyledEngineProvider } from '@mui/material/styles'
 import { useState } from 'react'
+import { Route, Routes } from 'react-router-dom'
+import Home from 'pages/Home/Home'
+import { Container } from '@mui/system'
+import CartPage from 'pages/Cart/CartPage'
 
 type Props = {}
 
-type CartDataProps = {
-    totalCount: number
-    totalPrice: number
+type ProductsInCart = {
+    [id: number]: number
 }
 
 const App = (props: Props) => {
-    const [cartData, setCartdata] = useState<CartDataProps>({
-        totalCount: 0,
-        totalPrice: 0,
+    const [ProductsInCart, setPoductsInCart] = useState<ProductsInCart>({
+        1: 1,
+        2: 1,
     })
 
-    const addProductToCart = (count: number, price: number) => {
-        setCartdata((prevState) => ({
-            totalCount: prevState.totalCount + count,
-            totalPrice: prevState.totalPrice + count * price,
+    const addProductToCart = (id: number, count: number) => {
+        setPoductsInCart((prevSate) => ({
+            ...prevSate,
+            [id]: (prevSate[id] || 0) + count,
         }))
     }
 
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
-            <Header cartData={cartData} />
-            <button onClick={() => addProductToCart(1, 100)}>
-                Добавить в корзину
-            </button>
-            <Main />
+            <Header ProductsInCart={ProductsInCart} />
+            <Container
+                sx={{
+                    padding: '60px 0',
+                }}
+            >
+                <Routes>
+                    <Route
+                        path="/"
+                        element={<Home addProductToCart={addProductToCart} />}
+                    />
+                    <Route path="cart" element={<CartPage />} />
+                </Routes>
+            </Container>
+
+            {/* <Main addProductToCart={addProductToCart} /> */}
             <Footer />
         </StyledEngineProvider>
     )
